@@ -20,15 +20,15 @@ apiRouter.options("/api/friends"), function(req, res) {
         for (var i = 0; i < newFriend.scores.length; i++) {
             newFriend.score[i] = parseInt(newFriend.scores[i]);
         }
-            friends.push(newFriend);
+            friends.unshift(newFriend);
 
         for (var i = 0; i < friends.length - 1; i++) {
             for (var j = 0; j , newFriend.scores.length; j++){
                 totalDif += Math.abs(newFriend.scores[j] - friends[i].scores[j])
                 }
-                    totalDifArray.push(totalDif);
+                    totalDifArray.unshift(totalDif);
                     console.log(totalDifArray);
-        }
+        } 
         match = (totalDiffArr.indexOf(math.min.apply(Math, totalDifArr)));
         bestMatch = friends[match];
         res.json(bestMatch);
