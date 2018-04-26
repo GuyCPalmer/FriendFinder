@@ -1,8 +1,8 @@
 var friends = [
     {
-        "name": "Zack Morris",
-        "photo": "https://image.ibb.co/mSPjTc/Screen_Shot_2018_04_26_at_1_39_14_PM.png",
-        "scores": [
+        name: "Zack Morris",
+        photo: "https://image.ibb.co/mSPjTc/Screen_Shot_2018_04_26_at_1_39_14_PM.png",
+        scores: [
             "5",
             "1",
             "4",
@@ -16,9 +16,9 @@ var friends = [
         ]
     },
     {
-        "name": "Jessie Spano",
-        "photo": "https://image.ibb.co/iMRL1x/Screen_Shot_2018_04_26_at_1_40_59_PM.png",
-        "scores": [
+        name: "Jessie Spano",
+        photo: "https://image.ibb.co/iMRL1x/Screen_Shot_2018_04_26_at_1_40_59_PM.png",
+        scores: [
             "4",
             "2",
             "5",
@@ -32,9 +32,9 @@ var friends = [
         ]
     },
     {
-        "name": "Kelly Kapowski",
-        "photo": "https://image.ibb.co/cJ1ngx/Screen_Shot_2018_04_26_at_1_38_51_PM.png",
-        "scores": [
+        name: "Kelly Kapowski",
+        photo: "https://image.ibb.co/cJ1ngx/Screen_Shot_2018_04_26_at_1_38_51_PM.png",
+        scores: [
             "5",
             "2",
             "2",
@@ -48,9 +48,9 @@ var friends = [
         ]
     },
     {
-        "name": "Lisa Turtle",
-        "photo": "https://image.ibb.co/fNRaZH/Screen_Shot_2018_04_26_at_1_40_36_PM.png",
-        "scores": [
+        name: "Lisa Turtle",
+        photo: "https://image.ibb.co/fNRaZH/Screen_Shot_2018_04_26_at_1_40_36_PM.png",
+        scores: [
             "3",
             "3",
             "4",
@@ -64,9 +64,9 @@ var friends = [
         ]
     },
     {
-        "name": "A.C. Slater",
-        "photo": "https://image.ibb.co/f69jTc/Screen_Shot_2018_04_26_at_1_39_43_PM.png",
-        "scores": [
+        name: "A.C. Slater",
+        photo: "https://image.ibb.co/f69jTc/Screen_Shot_2018_04_26_at_1_39_43_PM.png",
+        scores: [
             "2",
             "4",
             "3",
@@ -80,9 +80,9 @@ var friends = [
         ]
     },
     {
-        "name": "Samual Powers",
-        "photo": "https://image.ibb.co/cGcFZH/Screen_Shot_2018_04_26_at_1_40_18_PM.png",
-        "scores": [
+        name: "Samual Powers",
+        photo: "https://image.ibb.co/cGcFZH/Screen_Shot_2018_04_26_at_1_40_18_PM.png",
+        scores: [
             "5",
             "2",
             "3",
