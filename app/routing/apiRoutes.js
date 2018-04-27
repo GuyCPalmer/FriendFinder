@@ -37,12 +37,10 @@ console.log (matchedFriend)
 console.log (newFriend)
 
 friends.unshift(newFriend)
-res.send(matchedFriend)
+res.json(matchedFriend)
 })
 }
 module.exports = api;
-
-
 
 
 
