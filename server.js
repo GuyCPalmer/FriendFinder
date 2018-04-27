@@ -7,7 +7,7 @@ const path = require ("path");
 //Express and Heroku port settings
 //-------------------------------------
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8081;
 
 var friendsData = require("./app/data/friends.js");
 
