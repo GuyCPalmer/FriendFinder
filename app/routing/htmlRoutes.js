@@ -1,10 +1,12 @@
-var html = function () {
-    this.home("/app/public/", function(req, res) {
-        res.sendFile(path.join(__dirname, "home.html"));
+const path = require ("path")
+
+var html = function(app) {
+    app.get("/", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
     });
-    this.home("app/public/", function(req, res) {
-        res.sendFile(path.join(__dirname, "survey.html"));
-    });
+    app.get("/", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/survey.html"));
+    })
 }
 
-module.export = html;
+module.exports = html;

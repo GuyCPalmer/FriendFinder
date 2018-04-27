@@ -1,41 +1,49 @@
-//Dependencies 
+//require pathfor location and friends
 //-------------------------------------
-const express = require ("express");
-const bodyParser = require ("body-parser");
+const friends = require ("../data/friends");
 const path = require ("path");
 
-var friends = require("./app/data/friends.js");
-var app = express();
-var apiRouter = express.Router();
+var api = function (app) {}
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
-
-apiRouter.options("/api/friends"), function(req, res) {
-    var newFriend = req.body;
-    var totalDif = 0;
-    var totalDifArray = [];
-    var match = 0;
-
-        for (var i = 0; i < newFriend.scores.length; i++) {
-            newFriend.score[i] = parseInt(newFriend.scores[i]);
-        }
-            friends.unshift(newFriend);
-
-        for (var i = 0; i < friends.length - 1; i++) {
-            for (var j = 0; j , newFriend.scores.length; j++){
-                totalDif += Math.abs(newFriend.scores[j] - friends[i].scores[j])
-                }
-                    totalDifArray.unshift(totalDif);
-                    console.log(totalDifArray);
-        } 
-        match = (totalDiffArr.indexOf(math.min.apply(Math, totalDifArr)));
-        bestMatch = friends[match];
-        res.json(bestMatch);
-};
-
-apiRouter.get("/api/friends", function(req, res){
+app.get("/api/friends", function (req, res) {
     res.json(friends);
-});
+})
 
-module.export = apiRouter;
+app.post("/api/friends", function (req, res) {
+    var newFriend = req.body;
+    var matches;
+    var matchesArr = [];
+
+    friends.each (friend => {
+        let matchScore = 0;
+
+        for (var i = 0; i < friend.scores.length; i++) {
+            matchScore += Math.abs(parseINT(friend.scores[i]) - parseInt(newFriend.scores[i]));
+        };
+        matchesArr.unshift({
+            name: friend.name,
+            score: matchScore,
+            photo: friend.photo
+        });
+    })
+
+    let matchedFriend = matchesArr.reduce( (carry, next) => {
+        if(carry.score < next.score)
+            return carry;
+        else
+            return next;
+    })
+console.log (matchedFriend)
+console.log (newFriend)
+
+friends.unshift(newFriend)
+res.send(matchedFriend)
+})
+
+module.exports = api;
+
+
+
+
+
+
