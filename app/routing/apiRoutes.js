@@ -3,7 +3,7 @@
 const friends = require ("../data/friends");
 const path = require ("path");
 
-var api = function (app) {}
+var api = function (app) {
 
 app.get("/api/friends", function (req, res) {
     res.json(friends);
@@ -19,7 +19,7 @@ app.post("/api/friends", function (req, res) {
 
         for (var i = 0; i < friend.scores.length; i++) {
             matchScore += Math.abs(parseINT(friend.scores[i]) - parseInt(newFriend.scores[i]));
-        };
+        }; 
         matchesArr.unshift({
             name: friend.name,
             score: matchScore,
@@ -39,7 +39,7 @@ console.log (newFriend)
 friends.unshift(newFriend)
 res.send(matchedFriend)
 })
-
+}
 module.exports = api;
 
 
