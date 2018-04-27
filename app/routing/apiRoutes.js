@@ -1,15 +1,15 @@
-//require pathfor location and friends
+//require path for location and friends
 //-------------------------------------
-const friends = require ("../data/friends");
-const path = require ("path");
+const friends = require ('../data/friends');
+const path = require ('path');
 
 var api = function (app) {
 
-app.get("/api/friends", function (req, res) {
+app.get('/api/friends', function (req, res) {
     res.json(friends);
 })
 
-app.post("/api/friends", function (req, res) {
+app.post('/api/friends', function (req, res) {
     var newFriend = req.body;
     var matches;
     var matchesArr = [];
