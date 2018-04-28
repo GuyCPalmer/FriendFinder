@@ -14,7 +14,7 @@ app.post('/api/friends', function (req, res) {
     var matches;
     var matchesArr = [];
 
-    friends.each (friend => {
+    friends.forEach (friend => {
         let matchScore = 0;
 
         for (var i = 0; i < friend.scores.length; i++) {

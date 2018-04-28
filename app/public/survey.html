@@ -160,7 +160,7 @@
 	</div>
 
 	<!-- Modal -->
-	<div id="resultsModal" class="modal fade" role="dialog">
+	<div id="results-modal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 
 			<!-- Modal content-->
@@ -239,12 +239,12 @@
 			  ]
 			};
 			// AJAX post the data to the friends API.
-			$.post("/api/friends", userData, function(data) {
+			$.post("./api/friends", userData, function(data) {
 			  // Grab the result from the AJAX post so that the best match's name and photo are displayed.
 			  $("#match-name").text(data.name);
 			  $("#match-img").attr("src", data.photo);
 			  // Show the modal with the best match
-			  $("#results-modal").modal("toggle");
+			  $("#results-modal").modal("show");
 			});
 		  } else {
 			alert("Please fill out all fields before submitting!");
