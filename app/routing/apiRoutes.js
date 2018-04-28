@@ -1,47 +1,43 @@
-//require path for location and friends
-//-------------------------------------
-const friends = require ('../data/friends');
-const path = require ('path');
 
-var api = function (app) {
+module.exports = function apiRoutes(app) {
+    const fs = require("fs");
+    const path = require("path");
+    var friends = require("./../data/friends.js");
 
-app.get('/api/friends', function (req, res) {
-    res.json(friends);
-})
+    app.get("/api/friends", function (req, res) {
+        return res.json(friends);
+    }); //get /api/friends
 
-app.post('/api/friends', function (req, res) {
-    var newFriend = req.body;
-    var matches;
-    var matchesArr = [];
+    app.post("/api/friends", function (req, res) {
+        var totDiff;
+        var diffArry = [];
+        var newFriend = req.body;
 
-    friends.forEach (friend => {
-        let matchScore = 0;
+        for (var i = 0; i < friends.length; i++) {
+            totDiff = 0;
+            for (var j = 0; j < newFriend.scores.length; j++) {
+                totDiff += Math.abs(friends[i].scores[j] - newFriend.scores[j]);
+            } //for j
+            diffArry.push(totDiff);
+        } //for i
 
-        for (var i = 0; i < friend.scores.length; i++) {
-            matchScore += Math.abs(parseINT(friend.scores[i]) - parseInt(newFriend.scores[i]));
-        }; 
-        matchesArr.unshift({
-            name: friend.name,
-            score: matchScore,
-            photo: friend.photo
-        });
-    })
+        var match = diffArry.indexOf(Math.min(...diffArry));
 
-    let matchedFriend = matchesArr.reduce( (carry, next) => {
-        if(carry.score < next.score)
-            return carry;
-        else
-            return next;
-    })
-console.log (matchedFriend)
-console.log (newFriend)
+        friends.push(newFriend);
+        
+        console.log(newFriend);
 
-friends.unshift(newFriend)
-res.send(matchedFriend)
-})
-}
-module.exports = api;
-
+        fs.readFile(path.join(__dirname, "../data/friends.json"), "utf8", function (err, data) {
+            if (err) throw err;
+            var json = JSON.parse(data);
+            json.push(newFriend);
+            fs.writeFile(path.join(__dirname, "../data/friends.json"), JSON.stringify(json, null, 2), function (err) {
+                if (err) throw err;
+            });
+        }); //fs.readFile
+        res.json(friends[match]);
+    }); //post /api/friends
+} //module.exports
 
 
 
