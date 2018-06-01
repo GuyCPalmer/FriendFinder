@@ -10,7 +10,7 @@ Friend Finder is a full stack app built with express and hosted on Heroku.
 
 * 1. Click on the "go to survey button to fill out the questionaire. 
 * 2. Answer the questions to the best of your ability to ensure the best match! 
-* 3. Follow the link to begin: [Heroku](https://cryptic-taiga-56728.herokuapp.com/)
+* 3. Follow the link to begin: [Heroku](https://fast-caverns-46400.herokuapp.com/)
 
 #### Author
 Guy Palmer
