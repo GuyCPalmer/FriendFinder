@@ -1,4 +1,3 @@
-
 module.exports = function apiRoutes(app) {
     const fs = require("fs");
     const path = require("path");
@@ -38,6 +37,3 @@ module.exports = function apiRoutes(app) {
         res.json(friends[match]);
     }); //post /api/friends
 } //module.exports
-
-
-
