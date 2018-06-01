@@ -2,7 +2,7 @@
 
 Friend Finder is a compatibility based application not unlike a dating app. This site takes user results from a 10 question survey and matches them with the closest compatible person! The app then displays the name and picture of the best overall match. 
 
-
+![alt text](https://media.giphy.com/media/PO7TupTmAT2rBaco5h/giphy.gif)
 ### Technology 
 Friend Finder is a full stack app built with express and hosted on Heroku. 
 
